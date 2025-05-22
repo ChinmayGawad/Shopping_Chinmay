@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop Product Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- DaisyUI is included automatically with CDN Tailwind -->
+</head>
+<body class="bg-gray-100">
+    <header class="bg-white shadow-md mb-8">
+        <div class="container mx-auto flex justify-between items-center py-4 px-6">
+            <div class="logo flex items-center gap-2">
+                <img src="assets/logo.svg" alt="Shop Logo" class="h-10 w-10">
+                <span class="text-2xl font-bold text-gray-800 tracking-wide">ElectroShop</span>
+            </div>
+            <nav>
+                <ul class="flex gap-6 text-lg font-semibold">
+                    <li><a href="shop.html" class="hover:text-primary transition-colors">Shop</a></li>
+                    <li><a href="cart.html" class="hover:text-primary transition-colors">Cart</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="container mx-auto py-10">
+        <section class="hero relative flex flex-col items-center justify-center text-center py-12 mb-10 rounded-2xl shadow-lg overflow-hidden max-w-4xl mx-auto animate-fade-in" style="background: linear-gradient(270deg, #ff0080, #7928ca, #2af598, #fecfef, #ff0080); background-size: 1200% 1200%; animation: rgbGradient 8s ease-in-out infinite alternate, fade-in 1.2s cubic-bezier(.4,2,.6,1);">
+            <div class="absolute inset-0 opacity-20 bg-[url('assets/hero-bg.jpg')] bg-cover bg-center"></div>
+            <div class="relative z-10 flex flex-col items-center">
+                <div class="bg-white bg-opacity-20 rounded-full p-4 mb-4 shadow-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.35 2.7A1 1 0 007.5 17h9a1 1 0 00.85-1.53L17 13M7 13V6a1 1 0 011-1h5a1 1 0 011 1v7" /></svg>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-extrabold text-white drop-shadow mb-2 tracking-wide">Product Details</h1>
+                <p class="text-lg md:text-xl text-white font-medium drop-shadow">See all the features and offers for your selected product below.</p>
+            </div>
+        </section>
+        <div class="flex flex-col md:flex-row gap-10 items-center bg-base-100 rounded-2xl shadow-2xl p-10 border border-gray-200 max-w-4xl mx-auto animate-fade-in">
+            <div class="w-full md:w-1/2 flex justify-center">
+                <img src="assets/laptop.jpg" alt="Product Image" class="rounded-xl w-80 h-60 object-contain bg-white shadow-md border border-gray-100" />
+            </div>
+            <div class="w-full md:w-1/2 product-info">
+                <h1 class="text-4xl font-extrabold mb-3 text-gray-800">Product Name</h1>
+                <p class="mb-5 text-lg text-gray-600">Product description goes here.</p>
+                <div class="mb-5 flex flex-wrap gap-2">
+                    <!-- Badges will be injected here by JS -->
+                </div>
+                <div class="mb-6">
+                    <span class="text-3xl font-bold text-primary drop-shadow">₹0.00</span>
+                </div>
+                <button class="add-to-cart btn btn-primary w-full py-3 text-lg font-semibold shadow-lg transition-transform duration-200 hover:scale-105">Add to Cart</button>
+            </div>
+        </div>
+    </main> 
+    <footer class="footer footer-center p-4 bg-base-200 text-base-content mt-8">
+        <div>
+            <p>&copy; 2025 ElectroShop. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Find the product from the URL
+        const params = new URLSearchParams(window.location.search);
+        const productId = parseInt(params.get("id"));
+        const product = (window.products || []).find(p => p.id === productId) || (window.products ? window.products[0] : null);
+        const addToCartBtn = document.querySelector('.add-to-cart');
+        if (addToCartBtn && product) {
+            addToCartBtn.addEventListener('click', function () {
+                addToCart(product);
+                // Show a simple confirmation
+                addToCartBtn.textContent = 'Added!';
+                addToCartBtn.disabled = true;
+                setTimeout(() => {
+                    addToCartBtn.textContent = 'Add to Cart';
+                    addToCartBtn.disabled = false;
+                }, 1200);
+            });
+        }
+    });
+    </script>
+</body>
+</html>
+
+<style>
+@keyframes rgbGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fade-in 1.2s cubic-bezier(.4,2,.6,1);
+}
+</style>
