@@ -10,48 +10,78 @@
 <body class="bg-gray-100">
     <header class="bg-white shadow-md mb-8">
         <div class="container mx-auto flex justify-between items-center py-4 px-6">
-            <div class="logo flex items-center gap-2">
-                <img src="assets/logo.svg" alt="Shop Logo" class="h-10 w-10">
+            <div class="flex items-center gap-2">
                 <span class="text-2xl font-bold text-gray-800 tracking-wide">ElectroShop</span>
             </div>
             <nav>
-                <ul class="flex gap-6 text-lg font-semibold">
-                    <li><a href="shop.html" class="hover:text-primary transition-colors">Shop</a></li>
-                    <li><a href="cart.html" class="hover:text-primary transition-colors">Cart</a></li>
+                <ul class="flex gap-6 text-lg font-semibold items-center">
+                    <li>
+                        <button id="open-cart" class="cart-link flex items-center gap-1 bg-transparent border-none cursor-pointer text-gray-700 hover:text-primary transition-colors focus:outline-none">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.35 2.7A1 1 0 007.5 17h9a1 1 0 00.85-1.53L17 13M7 13V6a1 1 0 011-1h5a1 1 0 011 1v7" />
+                            </svg>
+                            <span class="hidden sm:inline">Cart</span>
+                        </button>
+                    </li>
                 </ul>
             </nav>
         </div>
     </header>
     
-    <main class="container mx-auto py-10">
-        <section class="hero relative flex flex-col items-center justify-center text-center py-12 mb-10 rounded-2xl shadow-lg overflow-hidden max-w-4xl mx-auto animate-fade-in" style="background: linear-gradient(270deg, #ff0080, #7928ca, #2af598, #fecfef, #ff0080); background-size: 1200% 1200%; animation: rgbGradient 8s ease-in-out infinite alternate, fade-in 1.2s cubic-bezier(.4,2,.6,1);">
-            <div class="absolute inset-0 opacity-20 bg-[url('assets/hero-bg.jpg')] bg-cover bg-center"></div>
-            <div class="relative z-10 flex flex-col items-center">
-                <div class="bg-white bg-opacity-20 rounded-full p-4 mb-4 shadow-lg">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.35 2.7A1 1 0 007.5 17h9a1 1 0 00.85-1.53L17 13M7 13V6a1 1 0 011-1h5a1 1 0 011 1v7" /></svg>
-                </div>
-                <h1 class="text-3xl md:text-4xl font-extrabold text-white drop-shadow mb-2 tracking-wide">Product Details</h1>
-                <p class="text-lg md:text-xl text-white font-medium drop-shadow">See all the features and offers for your selected product below.</p>
-            </div>
-        </section>
-        <div class="flex flex-col md:flex-row gap-10 items-center bg-base-100 rounded-2xl shadow-2xl p-10 border border-gray-200 max-w-4xl mx-auto animate-fade-in">
-            <div class="w-full md:w-1/2 flex justify-center">
-                <img src="assets/laptop.jpg" alt="Product Image" class="rounded-xl w-80 h-60 object-contain bg-white shadow-md border border-gray-100" />
-            </div>
-            <div class="w-full md:w-1/2 product-info">
-                <h1 class="text-4xl font-extrabold mb-3 text-gray-800">Product Name</h1>
-                <p class="mb-5 text-lg text-gray-600">Product description goes here.</p>
-                <div class="mb-5 flex flex-wrap gap-2">
-                    <!-- Badges will be injected here by JS -->
-                </div>
-                <div class="mb-6">
-                    <span class="text-3xl font-bold text-primary drop-shadow">₹0.00</span>
-                </div>
-                <button class="add-to-cart btn btn-primary w-full py-3 text-lg font-semibold shadow-lg transition-transform duration-200 hover:scale-105">Add to Cart</button>
+   <!-- Only the <main> section is shown below since the rest remains unchanged -->
+<main class="container mx-auto py-10 px-4">
+    <section class="hero mb-12 rounded-2xl shadow-2xl max-w-4xl mx-auto animate-fade-in bg-gradient-to-r from-indigo-500 to-purple-600 relative overflow-hidden">
+    <div class="absolute inset-0 bg-black bg-opacity-20 rounded-2xl"></div>
+    <div class="flex flex-col items-center justify-center py-14 relative z-10">
+        <div class="bg-white bg-opacity-20 rounded-full p-4 mb-4 shadow-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.35 2.7A1 1 0 007.5 17h9a1 1 0 00.85-1.53L17 13M7 13V6a1 1 0 011-1h5a1 1 0 011 1v7" />
+            </svg>
+        </div>
+        <h1 class="text-4xl font-extrabold text-white drop-shadow mb-2 tracking-wide">Product Details</h1>
+        <p class="text-lg text-white font-medium drop-shadow">See all the features and offers for your selected product below.</p>
+    </div>
+</section>
+
+
+    <div class="flex flex-col md:flex-row gap-10 items-center bg-white/90 rounded-2xl shadow-xl p-10 border border-gray-200 max-w-4xl mx-auto animate-fade-in product-details">
+        <div class="w-full md:w-1/2 flex flex-col items-center gap-4">
+            <img src="" alt="Product Image" class="rounded-xl w-80 h-60 object-contain bg-white shadow-md border border-gray-100 transition-transform duration-300 hover:scale-105" />
+            <div class="flex gap-3 mt-2">
+                <button class="px-5 py-2 rounded-lg bg-[var(--primary)] text-white font-semibold shadow-md hover:bg-[var(--secondary)] transition-all duration-300">Wishlist</button>
+                <button class="px-5 py-2 rounded-lg bg-[var(--secondary)] text-white font-semibold shadow-md hover:bg-[var(--primary)] transition-all duration-300">Share</button>
             </div>
         </div>
-    </main> 
-    <footer class="footer footer-center p-4 bg-base-200 text-base-content mt-8">
+
+        <div class="w-full md:w-1/2 product-info text-center md:text-left">
+            <h1 class="text-4xl font-extrabold mb-4 text-gray-800">Product Name</h1>
+            <p class="mb-6 text-lg text-gray-600 leading-relaxed">Product description goes here.</p>
+
+            <div class="mb-6 flex flex-wrap justify-center md:justify-start gap-2">
+                <!-- JS will inject product badges here -->
+            </div>
+
+            <div class="mb-6 flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 text-xl font-bold">
+                <span class="text-primary text-3xl">₹0.00</span>
+                <span class="text-base text-gray-400 line-through">₹0.00</span>
+                <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold">20% OFF</span>
+            </div>
+
+            <button class="add-to-cart btn btn-primary w-full py-3 text-lg font-semibold shadow-md hover:scale-105 transition-transform duration-300">Add to Cart</button>
+        </div>
+    </div>
+</main>
+
+    <aside class="cart-sidebar bg-gradient-to-br from-white to-gray-100 shadow-2xl rounded-l-2xl p-6 fixed top-0 right-0 h-full w-80 z-50 transform translate-x-full transition-transform duration-300 ease-in-out border-2 border-[var(--primary)]" id="cart-sidebar">
+        <button class="close-cart text-gray-500 hover:text-red-500 text-2xl absolute top-4 right-6 bg-transparent border-none cursor-pointer" title="Close">×</button>
+        <h2 class="text-2xl font-bold mb-4 text-[var(--primary)]">Your Cart</h2>
+        <ul id="cart-items" class="mb-4 overflow-y-auto max-h-[60vh]">
+            <!-- Cart items will be dynamically added here -->
+        </ul>
+        <p class="mb-4 font-semibold text-lg">Total: <span id="total-price" class="text-[var(--secondary)] text-xl">₹0.00</span></p>
+        <button id="checkout" class="btn w-full py-3 text-lg font-semibold shadow-lg bg-[var(--primary)] text-white rounded-lg hover:bg-[var(--secondary)] transition-all">Checkout</button>
+    </aside>
+    <footer class="footer footer-center p-4 mt-8">
         <div>
             <p>&copy; 2025 ElectroShop. All rights reserved.</p>
         </div>
@@ -60,10 +90,33 @@
     <script src="js/cart.js"></script>
     <script>
     document.addEventListener('DOMContentLoaded', function () {
+        // Ensure window.products is available
+        if (!window.products && typeof products !== 'undefined') {
+            window.products = products;
+        }
         // Find the product from the URL
         const params = new URLSearchParams(window.location.search);
         const productId = parseInt(params.get("id"));
         const product = (window.products || []).find(p => p.id === productId) || (window.products ? window.products[0] : null);
+        if (product) {
+            // Set product image
+            const img = document.querySelector('.product-details img');
+            if (img) img.src = product.image;
+            // Set product name
+            const name = document.querySelector('.product-info h1');
+            if (name) name.textContent = product.name;
+            // Set product description
+            const desc = document.querySelector('.product-info p');
+            if (desc) desc.textContent = product.description;
+            // Set product price
+            const price = document.querySelector('.product-info span.text-primary');
+            if (price) price.textContent = `₹${product.price.toLocaleString()}`;
+            // Set badges
+            const badgesDiv = document.querySelector('.product-info > div.flex');
+            if (badgesDiv && product.badges) {
+                badgesDiv.innerHTML = product.badges.map(badge => `<span class='inline-block bg-[var(--primary)] text-white text-xs font-semibold px-3 py-1 rounded-full shadow'>${badge}</span>`).join(' ');
+            }
+        }
         const addToCartBtn = document.querySelector('.add-to-cart');
         if (addToCartBtn && product) {
             addToCartBtn.addEventListener('click', function () {
@@ -79,20 +132,45 @@
         }
     });
     </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const openCartBtn = document.getElementById('open-cart');
+    const cartSidebar = document.getElementById('cart-sidebar');
+    const closeCartBtn = cartSidebar.querySelector('.close-cart');
+    // Open sidebar
+    if (openCartBtn && cartSidebar) {
+        openCartBtn.addEventListener('click', function () {
+            cartSidebar.classList.remove('translate-x-full');
+        });
+    }
+    // Close sidebar
+    if (closeCartBtn && cartSidebar) {
+        closeCartBtn.addEventListener('click', function () {
+            cartSidebar.classList.add('translate-x-full');
+        });
+    }
+    // Hide cart sidebar when pressing Escape
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') cartSidebar.classList.add('translate-x-full');
+    });
+    // Hide cart sidebar when clicking outside
+    document.addEventListener('mousedown', function(e) {
+        if (!cartSidebar.contains(e.target) && e.target !== openCartBtn && !cartSidebar.classList.contains('translate-x-full')) {
+            cartSidebar.classList.add('translate-x-full');
+        }
+    });
+});
+    </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const checkoutBtn = document.getElementById('checkout');
+    if (checkoutBtn) {
+        checkoutBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.open('payment.html', '_blank', 'width=500,height=700');
+        });
+    }
+});
+    </script>
 </body>
 </html>
-
-<style>
-@keyframes rgbGradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-@keyframes fade-in {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.animate-fade-in {
-  animation: fade-in 1.2s cubic-bezier(.4,2,.6,1);
-}
-</style>

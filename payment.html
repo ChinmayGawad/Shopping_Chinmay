@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - ElectroShop</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full border border-[var(--primary)] animate-fade-in">
+        <h2 class="text-3xl font-bold text-center mb-6 text-[var(--primary)]">Payment</h2>
+        <form id="payment-form" class="flex flex-col gap-4">
+            <input type="text" class="input input-bordered w-full" placeholder="Full Name" required>
+            <input type="email" class="input input-bordered w-full" placeholder="Email" required>
+            <input type="tel" class="input input-bordered w-full" placeholder="Phone Number" required>
+            <input type="text" class="input input-bordered w-full" placeholder="Card Number" maxlength="19" required>
+            <div class="flex gap-2">
+                <input type="text" class="input input-bordered w-1/2" placeholder="MM/YY" maxlength="5" required>
+                <input type="text" class="input input-bordered w-1/2" placeholder="CVV" maxlength="4" required>
+            </div>
+            <button type="submit" class="btn bg-[var(--primary)] text-white font-semibold py-3 rounded-lg shadow-lg hover:bg-[var(--secondary)] transition-all text-lg mt-4">Pay Now</button>
+        </form>
+        <div id="payment-success" class="hidden text-green-600 text-center font-bold mt-6">Payment Successful! Thank you for your purchase.</div>
+    </div>
+    <script>
+    document.getElementById('payment-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        document.getElementById('payment-form').classList.add('hidden');
+        document.getElementById('payment-success').classList.remove('hidden');
+        setTimeout(() => {
+            window.close();
+        }, 2000);
+    });
+    </script>
+</body>
+</html>
