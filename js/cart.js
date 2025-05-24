@@ -27,7 +27,7 @@ function addToCart(product) {
     updateCart();
     // Always open the cart sidebar when an item is added
     const cartSidebar = document.querySelector('.cart-sidebar');
-    if (cartSidebar) cartSidebar.style.display = 'block';
+    if (cartSidebar) cartSidebar.classList.add('show');
 }
 
 function removeFromCart(productId) {

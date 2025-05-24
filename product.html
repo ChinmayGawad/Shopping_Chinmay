@@ -16,11 +16,19 @@
             <nav>
                 <ul class="flex gap-6 text-lg font-semibold items-center">
                     <li>
+                        <a href="index.html" class="home-link flex items-center gap-1 bg-[var(--primary)] text-white px-4 py-2 rounded-lg shadow hover:bg-[var(--secondary)] transition-colors focus:outline-none">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoins="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7m-9 2v8m4-8v8m5-8l2 2m-2-2v8a2 2 0 01-2 2H7a2 2 0 01-2-2v-8z" />
+                            </svg>
+                            <span class="text-black sm:inline">Home</span>
+                        </a>
+                    </li>
+                    <li>
                         <button id="open-cart" class="cart-link flex items-center gap-1 bg-transparent border-none cursor-pointer text-gray-700 hover:text-primary transition-colors focus:outline-none">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.35 2.7A1 1 0 007.5 17h9a1 1 0 00.85-1.53L17 13M7 13V6a1 1 0 011-1h5a1 1 0 011 1v7" />
                             </svg>
-                            <span class="hidden sm:inline">Cart</span>
+                            <span class="text-gray-700 sm:inline">Cart</span>
                         </button>
                     </li>
                 </ul>
@@ -31,39 +39,39 @@
    <!-- Only the <main> section is shown below since the rest remains unchanged -->
 <main class="container mx-auto py-10 px-4">
     <section class="hero mb-12 rounded-2xl shadow-2xl max-w-4xl mx-auto animate-fade-in bg-gradient-to-r from-indigo-500 to-purple-600 relative overflow-hidden">
-    <div class="absolute inset-0 bg-black bg-opacity-20 rounded-2xl"></div>
-    <div class="flex flex-col items-center justify-center py-14 relative z-10">
-        <div class="bg-white bg-opacity-20 rounded-full p-4 mb-4 shadow-lg">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.35 2.7A1 1 0 007.5 17h9a1 1 0 00.85-1.53L17 13M7 13V6a1 1 0 011-1h5a1 1 0 011 1v7" />
-            </svg>
+        <div class="absolute inset-0 bg-black bg-opacity-30 rounded-2xl"></div>
+        <div class="flex flex-col items-center justify-center py-14 relative z-10">
+            <div class="bg-white bg-opacity-30 rounded-full p-4 mb-4 shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-[var(--primary)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.35 2.7A1 1 0 007.5 17h9a1 1 0 00.85-1.53L17 13M7 13V6a1 1 0 011-1h5a1 1 0 011 1v7" />
+                </svg>
+            </div>
+            <h1 class="text-4xl font-extrabold drop-shadow mb-2 tracking-wide text-gray-100">Product Details</h1>
+            <p class="text-lg font-medium drop-shadow text-yellow-200">See all the features and offers for your selected product below.</p>
         </div>
-        <h1 class="text-4xl font-extrabold text-white drop-shadow mb-2 tracking-wide">Product Details</h1>
-        <p class="text-lg text-white font-medium drop-shadow">See all the features and offers for your selected product below.</p>
-    </div>
-</section>
+    </section>
 
 
     <div class="flex flex-col md:flex-row gap-10 items-center bg-white/90 rounded-2xl shadow-xl p-10 border border-gray-200 max-w-4xl mx-auto animate-fade-in product-details">
         <div class="w-full md:w-1/2 flex flex-col items-center gap-4">
             <img src="" alt="Product Image" class="rounded-xl w-80 h-60 object-contain bg-white shadow-md border border-gray-100 transition-transform duration-300 hover:scale-105" />
             <div class="flex gap-3 mt-2">
-                <button class="px-5 py-2 rounded-lg bg-[var(--primary)] text-white font-semibold shadow-md hover:bg-[var(--secondary)] transition-all duration-300">Wishlist</button>
-                <button class="px-5 py-2 rounded-lg bg-[var(--secondary)] text-white font-semibold shadow-md hover:bg-[var(--primary)] transition-all duration-300">Share</button>
+                <button class="px-5 py-2 rounded-lg bg-[var(--primary)] text-black font-semibold shadow-md hover:bg-[var(--secondary)] transition-all duration-300">Wishlist</button>
+                <button class="px-5 py-2 rounded-lg bg-[var(--secondary)] text-black font-semibold shadow-md hover:bg-[var(--primary)] transition-all duration-300">Share</button>
             </div>
         </div>
 
         <div class="w-full md:w-1/2 product-info text-center md:text-left">
-            <h1 class="text-4xl font-extrabold mb-4 text-gray-800">Product Name</h1>
-            <p class="mb-6 text-lg text-gray-600 leading-relaxed">Product description goes here.</p>
+            <h1 class="text-4xl font-extrabold mb-4 text-[var(--primary)]">Product Name</h1>
+            <p class="mb-6 text-lg text-gray-800 leading-relaxed">Product description goes here.</p>
 
             <div class="mb-6 flex flex-wrap justify-center md:justify-start gap-2">
                 <!-- JS will inject product badges here -->
             </div>
 
             <div class="mb-6 flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 text-xl font-bold">
-                <span class="text-primary text-3xl">₹0.00</span>
-                <span class="text-base text-gray-400 line-through">₹0.00</span>
+                <span class="text-[var(--secondary)] text-3xl">₹0.00</span>
+                <span class="text-base text-gray-500 line-through">₹0.00</span>
                 <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold">20% OFF</span>
             </div>
 
@@ -88,89 +96,6 @@
     </footer>
     <script src="js/products.js"></script>
     <script src="js/cart.js"></script>
-    <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        // Ensure window.products is available
-        if (!window.products && typeof products !== 'undefined') {
-            window.products = products;
-        }
-        // Find the product from the URL
-        const params = new URLSearchParams(window.location.search);
-        const productId = parseInt(params.get("id"));
-        const product = (window.products || []).find(p => p.id === productId) || (window.products ? window.products[0] : null);
-        if (product) {
-            // Set product image
-            const img = document.querySelector('.product-details img');
-            if (img) img.src = product.image;
-            // Set product name
-            const name = document.querySelector('.product-info h1');
-            if (name) name.textContent = product.name;
-            // Set product description
-            const desc = document.querySelector('.product-info p');
-            if (desc) desc.textContent = product.description;
-            // Set product price
-            const price = document.querySelector('.product-info span.text-primary');
-            if (price) price.textContent = `₹${product.price.toLocaleString()}`;
-            // Set badges
-            const badgesDiv = document.querySelector('.product-info > div.flex');
-            if (badgesDiv && product.badges) {
-                badgesDiv.innerHTML = product.badges.map(badge => `<span class='inline-block bg-[var(--primary)] text-white text-xs font-semibold px-3 py-1 rounded-full shadow'>${badge}</span>`).join(' ');
-            }
-        }
-        const addToCartBtn = document.querySelector('.add-to-cart');
-        if (addToCartBtn && product) {
-            addToCartBtn.addEventListener('click', function () {
-                addToCart(product);
-                // Show a simple confirmation
-                addToCartBtn.textContent = 'Added!';
-                addToCartBtn.disabled = true;
-                setTimeout(() => {
-                    addToCartBtn.textContent = 'Add to Cart';
-                    addToCartBtn.disabled = false;
-                }, 1200);
-            });
-        }
-    });
-    </script>
-    <script>
-    document.addEventListener('DOMContentLoaded', function () {
-    const openCartBtn = document.getElementById('open-cart');
-    const cartSidebar = document.getElementById('cart-sidebar');
-    const closeCartBtn = cartSidebar.querySelector('.close-cart');
-    // Open sidebar
-    if (openCartBtn && cartSidebar) {
-        openCartBtn.addEventListener('click', function () {
-            cartSidebar.classList.remove('translate-x-full');
-        });
-    }
-    // Close sidebar
-    if (closeCartBtn && cartSidebar) {
-        closeCartBtn.addEventListener('click', function () {
-            cartSidebar.classList.add('translate-x-full');
-        });
-    }
-    // Hide cart sidebar when pressing Escape
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') cartSidebar.classList.add('translate-x-full');
-    });
-    // Hide cart sidebar when clicking outside
-    document.addEventListener('mousedown', function(e) {
-        if (!cartSidebar.contains(e.target) && e.target !== openCartBtn && !cartSidebar.classList.contains('translate-x-full')) {
-            cartSidebar.classList.add('translate-x-full');
-        }
-    });
-});
-    </script>
-    <script>
-    document.addEventListener('DOMContentLoaded', function () {
-    const checkoutBtn = document.getElementById('checkout');
-    if (checkoutBtn) {
-        checkoutBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            window.open('payment.html', '_blank', 'width=500,height=700');
-        });
-    }
-});
-    </script>
+    <script src="js/product-page.js"></script>
 </body>
 </html>

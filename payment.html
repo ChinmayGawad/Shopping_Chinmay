@@ -14,24 +14,42 @@
             <input type="text" class="input input-bordered w-full" placeholder="Full Name" required>
             <input type="email" class="input input-bordered w-full" placeholder="Email" required>
             <input type="tel" class="input input-bordered w-full" placeholder="Phone Number" required>
-            <input type="text" class="input input-bordered w-full" placeholder="Card Number" maxlength="19" required>
-            <div class="flex gap-2">
-                <input type="text" class="input input-bordered w-1/2" placeholder="MM/YY" maxlength="5" required>
-                <input type="text" class="input input-bordered w-1/2" placeholder="CVV" maxlength="4" required>
+            <!-- Payment Method Selection -->
+            <label for="payment-method" class="sr-only">Payment Method</label>
+            <select id="payment-method" class="input input-bordered w-full" required title="Payment Method">
+                <option value="card">Credit/Debit Card</option>
+                <option value="upi">UPI</option>
+                <option value="netbanking">Net Banking</option>
+                <option value="cod">Cash on Delivery</option>
+            </select>
+            <!-- Card Fields -->
+            <div id="card-fields" class="payment-extra">
+                <input type="text" class="input input-bordered w-full" placeholder="Card Number" maxlength="19" required>
+                <div class="flex gap-2">
+                    <input type="text" class="input input-bordered w-1/2" placeholder="MM/YY" maxlength="5" required>
+                    <input type="text" class="input input-bordered w-1/2" placeholder="CVV" maxlength="4" required>
+                </div>
             </div>
+            <!-- UPI Field -->
+            <div id="upi-field" class="payment-extra hidden">
+                <input type="text" class="input input-bordered w-full" placeholder="UPI ID">
+            </div>
+            <!-- Net Banking Field -->
+            <div id="netbanking-field" class="payment-extra hidden">
+                <input type="text" class="input input-bordered w-full" placeholder="Bank Name">
+            </div>
+            <!-- Delivery Address Fields -->
+            <input type="text" class="input input-bordered w-full" placeholder="Address Line 1" required>
+            <input type="text" class="input input-bordered w-full" placeholder="Address Line 2 (Optional)">
+            <div class="flex gap-2">
+                <input type="text" class="input input-bordered w-1/2" placeholder="City" required>
+                <input type="text" class="input input-bordered w-1/2" placeholder="State" required>
+            </div>
+            <input type="text" class="input input-bordered w-full" placeholder="Pincode" required>
             <button type="submit" class="btn bg-[var(--primary)] text-white font-semibold py-3 rounded-lg shadow-lg hover:bg-[var(--secondary)] transition-all text-lg mt-4">Pay Now</button>
         </form>
         <div id="payment-success" class="hidden text-green-600 text-center font-bold mt-6">Payment Successful! Thank you for your purchase.</div>
     </div>
-    <script>
-    document.getElementById('payment-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        document.getElementById('payment-form').classList.add('hidden');
-        document.getElementById('payment-success').classList.remove('hidden');
-        setTimeout(() => {
-            window.close();
-        }, 2000);
-    });
-    </script>
+    <script src="js/payment-page.js"></script>
 </body>
 </html>

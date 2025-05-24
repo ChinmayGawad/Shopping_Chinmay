@@ -65,40 +65,6 @@
     </footer>
     <script src="js/products.js"></script>
     <script src="js/cart.js"></script>
-    <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const openCartBtn = document.getElementById('open-cart');
-        const cartSidebar = document.getElementById('cart-sidebar');
-        const closeCartBtn = cartSidebar.querySelector('.close-cart');
-        // Open sidebar
-        if (openCartBtn && cartSidebar) {
-            openCartBtn.addEventListener('click', function () {
-                cartSidebar.classList.remove('translate-x-full');
-                cartSidebar.classList.add('show');
-            });
-        }
-        // Close sidebar
-        if (closeCartBtn && cartSidebar) {
-            closeCartBtn.addEventListener('click', function () {
-                cartSidebar.classList.add('translate-x-full');
-                cartSidebar.classList.remove('show');
-            });
-        }
-        // Hide cart sidebar when pressing Escape
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                cartSidebar.classList.add('translate-x-full');
-                cartSidebar.classList.remove('show');
-            }
-        });
-        // Hide cart sidebar when clicking outside
-        document.addEventListener('mousedown', function(e) {
-            if (!cartSidebar.contains(e.target) && e.target !== openCartBtn && !cartSidebar.classList.contains('translate-x-full')) {
-                cartSidebar.classList.add('translate-x-full');
-                cartSidebar.classList.remove('show');
-            }
-        });
-    });
-    </script>
+    <script src="js/index-page.js"></script>
 </body>
 </html>

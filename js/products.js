@@ -245,7 +245,7 @@ document.addEventListener("DOMContentLoaded", function () {
           if (typeof addToCart === 'function' && product) {
             addToCart(product);
             const cartSidebar = document.querySelector('.cart-sidebar');
-            if (cartSidebar) cartSidebar.style.display = 'block';
+            if (cartSidebar) cartSidebar.classList.add('show');
           }
         });
       });
